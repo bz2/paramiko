@@ -2,6 +2,12 @@
 Changelog
 =========
 
+* :bug:`971 (1.17+)` Allow any type implementing the buffer API to be used with
+  `BufferedFile <paramiko.file.BufferedFile>`,
+  `Channel <paramiko.channel.Channel>`, and
+  `SFTPFile <paramiko.sftp_file.SFTPFile>`. This resolves a regression
+  introduced in 1.13 with the Python 3 porting changes, when using types such
+  as ``memoryview``.
 * :release:`1.17.4 <2017-02-20>`
 * :bug:`853 (1.17+)` Tweak how `RSAKey.__str__ <paramiko.rsakey.RSAKey>`
   behaves so it doesn't cause ``TypeError`` under Python 3. Thanks to Francisco
